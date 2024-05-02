@@ -1,0 +1,29 @@
+{% extends "maestra.html" %}
+{% block titulo %}
+Editar Carro
+{% endblock %}
+{% block contenido %}
+<section class="section">
+    <div class="columns">
+        <div class="column">
+            <h3 class="is-size-3">Editar carro</h3>
+            <form action="{{url_for('actualizar_carro')}}" method="post">
+                {# Enviar el id en un campo oculto #}
+                <input type="hidden" name="id" value="{{carro[0]}}">
+                <label for="marca">Marca:</label>
+                <input value="{{carro[1]}}" required type="text" class="input" placeholder="Marca" name="marca" id="marca">
+                <label for="modelo">Modelo:</label>
+                <input value="{{carro[2]}}" required type="text" class="input" placeholder="Modelo" name="modelo" id="modelo">
+                <label for="color">Color:</label>
+                <input value="{{carro[3]}}" required type="text" class="input" placeholder="Color" name="color" id="color">
+                <label for="precio">Precio:</label>
+                <input value="{{carro[4]}}" required type="number" class="input" placeholder="Precio" name="precio" id="precio">
+                <label for="cuotas">Cuotas:</label>
+                <input value="{{carro[5]}}" required type="number" class="input" placeholder="Cuotas" name="cuotas" id="cuotas">
+                <button type="submit" class="button is-success mt-2">Guardar</button>
+                <a href="{{url_for('carros')}}" class="button is-primary mt-2">Volver</a>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

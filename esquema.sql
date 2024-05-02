@@ -1,0 +1,10 @@
+CREATE TABLE carros(
+    id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    marca VARCHAR(255) NOT NULL,
+    modelo VARCHAR(255) NOT NULL,
+    color VARCHAR(255) NOT NULL,
+    precio DECIMAL(9,2) NOT NULL,
+    cuotas INT NOT NULL,
+    descuento DECIMAL(9,2) NOT NULL,
+    precio_cuota DECIMAL(9,2) NOT NULL
+)
